@@ -15,6 +15,7 @@ export interface IDotContainerProps {
   maxPage: number;
   sizeRatio?: number;
   activeDotColor: string;
+  inactiveDotColor: string;
   vertical?: boolean;
 }
 
@@ -79,7 +80,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
       scrollTo(props.curPage);
   }, [prevPage, props.curPage, props.maxPage, scrollTo]);
 
-  const { curPage, maxPage, activeDotColor } = props;
+  const { curPage, maxPage, activeDotColor, inactiveDotColor } = props;
   const list = useMemo(() => [...Array(maxPage).keys()], [maxPage]);
 
   let normalizedPage = curPage;
@@ -106,6 +107,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
               curPage={normalizedPage}
               maxPage={maxPage}
               activeColor={activeDotColor}
+              inactiveColor={inactiveDotColor}
             />
           );
         })}
@@ -145,6 +147,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
               curPage={normalizedPage}
               maxPage={maxPage}
               activeColor={activeDotColor}
+              inactiveColor={inactiveDotColor}
             />
           );
         })}

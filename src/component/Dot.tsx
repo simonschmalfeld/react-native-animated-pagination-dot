@@ -15,6 +15,7 @@ const Dot: React.FC<{
   curPage: number;
   maxPage: number;
   activeColor: string;
+  inactiveColor?: string;
   sizeRatio: number;
 }> = (props) => {
   const [animVal] = useState(new Animated.Value(0));
@@ -102,7 +103,7 @@ const Dot: React.FC<{
     <Animated.View
       style={[
         {
-          backgroundColor: props.activeColor,
+          backgroundColor: type.active ? props.activeColor : props.inactiveColor,
           margin: 3 * props.sizeRatio,
         },
         animStyle,

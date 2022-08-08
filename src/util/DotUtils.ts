@@ -1,6 +1,7 @@
 type IDotStyle = {
   size: number;
   opacity: number;
+  active: boolean;
 };
 
 enum EnumDotType {
@@ -18,6 +19,7 @@ const DotStyle = {
   [EnumDotType.ACTIVE]: {
     size: 8,
     opacity: 1.0,
+    active: true
   },
   [EnumDotType.MEDIUM]: {
     size: 5,
