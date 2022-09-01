@@ -1,7 +1,7 @@
 type IDotStyle = {
   size: number;
   opacity: number;
-  active: boolean;
+  active?: boolean;
 };
 
 enum EnumDotType {

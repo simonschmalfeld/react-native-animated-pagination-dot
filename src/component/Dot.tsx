@@ -10,14 +10,16 @@ import usePrevious from 'react-use/lib/usePrevious';
 import EmptyDot from './EmptyDot';
 import { getDotStyle } from '../util/DotUtils';
 
-const Dot: React.FC<{
+export interface DotProps {
   idx: number;
   curPage: number;
   maxPage: number;
   activeColor: string;
   inactiveColor?: string;
   sizeRatio: number;
-}> = (props) => {
+}
+
+const Dot: React.FC<DotProps> = (props) => {
   const [animVal] = useState(new Animated.Value(0));
   const [animate, setAnimate] = useState(false);
   const [type, setType] = useState(() =>
@@ -103,7 +105,9 @@ const Dot: React.FC<{
     <Animated.View
       style={[
         {
-          backgroundColor: type.active ? props.activeColor : props.inactiveColor,
+          backgroundColor: type.active
+            ? props.activeColor
+            : props.inactiveColor,
           margin: 3 * props.sizeRatio,
         },
         animStyle,

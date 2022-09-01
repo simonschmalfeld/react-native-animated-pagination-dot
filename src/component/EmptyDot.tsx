@@ -7,9 +7,11 @@ import { StyleSheet, View } from 'react-native';
 
 export const defaultEmptyDotSize = 3;
 
-const EmptyDot: React.FC<{
+export interface EmptyDotProps {
   sizeRatio: number;
-}> = (props) => {
+}
+
+const EmptyDot: React.FC<EmptyDotProps> = (props) => {
   return (
     <View
       style={[

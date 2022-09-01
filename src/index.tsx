@@ -32,7 +32,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
   }, [props.sizeRatio]);
 
   const scrollTo = useCallback<(index: number, animated?: boolean) => void>(
-    (index, animated = true) => {
+    (index: number, animated = true) => {
       if (!refScrollView.current) return;
 
       const sizeRatio = getSizeRatio();
@@ -98,7 +98,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
   if (maxPage < 5) {
     return (
       <View style={container}>
-        {list.map((i) => {
+        {list.map((i: any) => {
           return (
             <Dot
               key={i}
@@ -138,7 +138,7 @@ const DotContainer: React.FC<IDotContainerProps> = (props) => {
         <EmptyDot sizeRatio={sizeRatio} />
         <EmptyDot sizeRatio={sizeRatio} />
 
-        {list.map((i) => {
+        {list.map((i: any) => {
           return (
             <Dot
               sizeRatio={sizeRatio}
